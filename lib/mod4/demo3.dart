@@ -21,12 +21,12 @@ class Clothes{
   );
 
   Clothes.fromJson(Map<String, dynamic> json){
-    this.color = json['color'];
-    this.type = json['type'];
+    color = json['color'];
+    type = json['type'];
   }
 
   String get getColor{
-    return this.color;
+    return color;
   }
 
   set setColor(String color){
@@ -37,7 +37,7 @@ class Clothes{
   @override
   String toString() {
    
-    return "${this.type.name} est de couleur ${this.color} ${this.size > 0 ? ', taille = ${this.size}' : '' }";
+    return "${type.name} est de couleur $color ${size > 0 ? ', taille = $size' : '' }";
   }
 
 }

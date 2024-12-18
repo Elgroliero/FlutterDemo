@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(this.title),
+        title: Text(title),
       ),
       body: Column(children: [
         Text(
@@ -40,9 +40,9 @@ class HomePage extends StatelessWidget {
         ),
         ElevatedButton(
             onPressed: () {},
-            child: Text("Cliquez ici !"),
             style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Colors.amber))),
+                backgroundColor: WidgetStateProperty.all(Colors.amber)),
+            child: Text("Cliquez ici !")),
         OutlinedButton(onPressed: null, child: Text("Cliquez là !")),
         FilledButton(onPressed: null, child: Text("Ou là !")),
         Image.network(

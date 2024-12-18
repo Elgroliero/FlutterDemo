@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(this.title),
+        title: Text(title),
       ),
       body: ArticleList(),
     );
@@ -36,6 +36,8 @@ class HomePage extends StatelessWidget {
 }
 
 class ArticleList extends StatefulWidget{
+  const ArticleList({super.key});
+
 
   @override
   State<ArticleList> createState() => _ArticleListState();
@@ -70,7 +72,7 @@ class ArticleItem extends StatefulWidget {
   final double price;
   final Function(double) totalItems;
 
-  ArticleItem({required this.name, required this.price, required this.totalItems});
+  const ArticleItem({super.key, required this.name, required this.price, required this.totalItems});
 
   @override
   State<ArticleItem> createState() => _ArticleItemState();

@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 class MakeUp<T>{
 
@@ -27,9 +26,9 @@ void main(){
   print('-------------');
 
   //fonction anonyme/callback
-  liste.forEach((value) {
+  for (var value in liste) {
     print(value);
-  });
+  }
 
 
 }

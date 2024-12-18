@@ -7,7 +7,7 @@ void main() {
 class PasswordInput extends StatefulWidget {
   String label;
 
-  PasswordInput(this.label);
+  PasswordInput(this.label, {super.key});
 
   @override
   State<PasswordInput> createState() => _PasswordInputState();

@@ -14,9 +14,9 @@ class Course{
     print(sum);
 
     //équivalent à
-    notes.forEach((note){
+    for (var note in notes) {
       total += note;
-    });
+    }
     print(total);
 
     print("La moyenne de la matière $name est ${(sum / notes.length).toStringAsFixed(2)}");
