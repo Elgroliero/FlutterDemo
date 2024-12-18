@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(PasswordInput());
+  runApp(PasswordInput("Mot de passe"));
 }
 
 class PasswordInput extends StatefulWidget {
-  const PasswordInput({super.key});
+  String label;
+
+  PasswordInput(this.label);
 
   @override
   State<PasswordInput> createState() => _PasswordInputState();
@@ -14,16 +16,16 @@ class PasswordInput extends StatefulWidget {
 class _PasswordInputState extends State<PasswordInput> {
   bool _isVisible = false;
 
-  void toggleVisibility(bool switchValue) {
+  void changeVisibility(bool value) {
     setState(() {
-      _isVisible = switchValue;
+      _isVisible = value;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Démo state - password visibility",
+        title: "Démo state",
         home: Scaffold(
           body: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -31,13 +33,16 @@ class _PasswordInputState extends State<PasswordInput> {
               children: [
                 TextField(
                   obscureText: !_isVisible,
-                  decoration: InputDecoration(labelText: "Mot de passe ?"),
+                  decoration: InputDecoration(labelText: widget.label),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(_isVisible ? Icons.lock_open : Icons.lock),
-                    Switch(value: _isVisible, onChanged: toggleVisibility)
+                    Switch(
+                        value: _isVisible,
+                        onChanged: changeVisibility
+                    )
                   ],
                 )
               ],
